@@ -1,0 +1,38 @@
+<div class="dash-ui m-5" >
+    <div class="flex flex-row gap-3" >
+        @for (item of books; track $index) {
+            
+            <mat-card appearance="outlined">
+                <mat-card-header color="primary">
+                    <mat-card-title-group>
+                        <mat-card-title>{{item.title}}</mat-card-title>
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>{{item.content}}</mat-card-content>
+                <mat-card-footer>{{item.author}}</mat-card-footer>
+            </mat-card>
+        }
+
+
+        <!-- <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>BOOK 1</mat-card-title>
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>Simple card</mat-card-content>
+            <mat-card-footer>Author here</mat-card-footer>
+        </mat-card>
+
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>BOOK 1</mat-card-title>
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>Simple card</mat-card-content>
+            <mat-card-footer>Author here</mat-card-footer>
+        </mat-card> -->
+        
+    </div>
+</div>

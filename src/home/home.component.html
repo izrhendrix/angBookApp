@@ -1,0 +1,88 @@
+<!-- <div class=" h-screen">
+    <div class="h-full flex grid-col-2">
+        <div class="w-1/4 bg-zinc-500 p-5">
+            <div class="card-cotainer text-purple-200" >
+                <mat-card>
+                    <form [formGroup]="inputForm">
+                           <mat-card-content >
+                            <mat-card-header>Enter your to do</mat-card-header>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Outline form field</mat-label>
+                                    <input matInput placeholder="Placeholder" formControlName="input">
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                </mat-form-field>
+                            </mat-card-content>
+                        <mat-card-actions> <button mat-raised-button style="background-color:whitesmoke;  left: 30px;" (click)="addTask()" [disabled]="inputForm.invalid">Add</button></mat-card-actions>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+        <div class="w-3/4 bg-purple-300 p-5">
+            <div class="to-contain">
+                <div class="drop-down flex flex-col">
+                    <div cdkDropListGroup class="grid grid-cols-3 gap-4 ">
+                        <div class="example-container">
+                            <h6>To do</h6>
+                            <div
+                              cdkDropList
+                              [cdkDropListData]="toDoList"
+                              class="example-list"
+                              (cdkDropListDropped)="drop($event)">
+                              @for (item of toDoList; track item) {
+                                <div class="example-box" cdkDrag>{{item.description}}
+                                    <button mat-raised-button class="bg-red-300" (click)="deleteTask($index)">Delete</button>
+                                </div>
+                              }
+                            </div>
+                        </div>
+                        <div class="example-container">
+                            <h6>Doing</h6>
+                            <div
+                              cdkDropList
+                              [cdkDropListData]="doingList"
+                              class="example-list"
+                              (cdkDropListDropped)="drop($event)">
+                              @for (item of doingList; track item) {
+                                <div class="example-box" cdkDrag>{{item.description}}
+                                    <button mat-raised-button class="bg-red-300" (click)="deleteDoingTask($index)">Delete</button>
+                                </div>
+                              }
+                            </div>
+                        </div>
+                        <div class="example-container">
+                            <h6>Done</h6>
+                            <div
+                              cdkDropList
+                              [cdkDropListData]="doneList"
+                              class="example-list"
+                              (cdkDropListDropped)="drop($event)">
+                              @for (item of doneList; track item) {
+                                <div class="example-box" cdkDrag>{{item.description}}
+                                    <button mat-raised-button class="bg-red-300" (click)="deleteDoneTask($index)">Delete</button>
+                                </div>
+                              }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="flex h-full w-full items-center justify-center bg-purple-200 bg-blend-multiply " >
+    <mat-card id="card"class=" items-center justify-center">
+        <mat-toolbar color="primary" class="justify-center ">Sign In</mat-toolbar>
+        <form>
+            <mat-form-field class="w-96" appearance="outline">
+                <input matInput placeholder="Username or Email">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="w-96" appearance="outline">
+                <input matInput placeholder="Password">
+            </mat-form-field>
+        </form>
+        <mat-card-actions matRipple  matRippleColor="blue"><button mat-raised-button (click)="goToHome('/home')" color="accent">Log In</button></mat-card-actions>
+    </mat-card>
+</div>
+
+

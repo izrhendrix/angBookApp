@@ -1,0 +1,39 @@
+<div class="example-container">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="snav.toggle()"class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" autosize>
+            <mat-sidenav #snav>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="dash">
+                        <span class="entry">
+                          <mat-icon>house</mat-icon>
+                          <span>Dashboard</span>
+                        </span>
+                    </a>
+                    <a mat-list-item routerLink="books">
+                      <span class="entry">
+                        <mat-icon>book</mat-icon>
+                        <span>Books</span>
+                      </span>
+                    </a>
+                </mat-nav-list>
+            </mat-sidenav>
+
+            <mat-sidenav-content>
+              Testsing content stays the same
+              <router-outlet></router-outlet>           
+            </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

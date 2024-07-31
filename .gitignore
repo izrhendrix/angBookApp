@@ -1,0 +1,17 @@
+node_modules/
+dist/
+/.angular/cache
+*.log
+
+
+
+
+
+
+
+
+
+
+
+
+
