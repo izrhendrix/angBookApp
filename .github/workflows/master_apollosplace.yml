@@ -22,22 +22,22 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          
+
       - name: Increase file descriptor limit
         run: ulimit -n 10000
-        
+
       - name: Check artifact size
         run: du -sh .
-      
+
       - name: Compress artifact
-        run: tar -czf node-app.tar.gz
-        
-      - name: Upload artifact for deployment job
+        run: tar -czf node-app.tar.gz .
+
+      - name: Upload compressed artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
           path: node-app.tar.gz
-          timeout-minutes: 30 
+          timeout-minutes: 30
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -53,8 +53,8 @@ jobs:
           name: node-app
 
       - name: Extract artifact
-        run:  tar -xzf node-app.tar.gz
-      
+        run: tar -xzf node-app.tar.gz
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
@@ -62,4 +62,4 @@ jobs:
           app-name: 'apollosplace'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4960C4873E824A61B56D7ABE83C2C9C7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_xxxxxxxxxx }}
