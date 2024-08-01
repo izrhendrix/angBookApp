@@ -23,9 +23,6 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Increase file descriptor limit
-        run: ulimit -n 10000
-
       - name: Check artifact size
         run: du -sh .
 
