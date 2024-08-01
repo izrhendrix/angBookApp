@@ -21,5 +21,6 @@ import {MatButtonModule} from '@angular/material/button';
 })
 
 export class AppComponent {
+  title: string = 'learnApp'
 
 }
