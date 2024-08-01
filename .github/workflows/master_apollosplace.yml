@@ -25,9 +25,6 @@ jobs:
 
       - name: Check artifact size
         run: du -sh .
-
-      - name: List files to be uploaded
-        run: ls -la .
         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
